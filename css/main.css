@@ -48,6 +48,7 @@ h1 {
   background-image: url("../images/pexels-photo.jpg");
   height: 100vh;
   background-position: center;
+  padding: 0 1rem;
 }
 
 #header h1 {
@@ -184,6 +185,18 @@ a:hover {
   color: #767280;
 }
 
+.services-card:hover {
+  background: #fff;
+  -webkit-box-shadow: -1px 4px 69px -1px rgba(125, 4, 150, 0.925);
+          box-shadow: -1px 4px 69px -1px rgba(125, 4, 150, 0.925);
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  padding: 20 30px;
+  border-radius: 25px;
+  -webkit-column-rule-style: groove;
+          column-rule-style: groove;
+}
+
 #about {
   background: #fff;
   display: -webkit-box;
@@ -202,6 +215,7 @@ a:hover {
 
 .about-text {
   width: 50%;
+  max-height: 80vh;
   padding: 3rem;
   background: #F3DEFE;
 }
@@ -214,15 +228,16 @@ a:hover {
 
 .about-text h2 {
   font-size: 2.2rem;
+  margin-top: 0;
   color: #FF00AA;
-  margin: 0;
   text-shadow: 3px 3px 70px rgba(198, 16, 204, 0.54);
 }
 
 .about-text p {
   font-size: 1.4rem;
-  line-height: 3rem;
+  line-height: 2.2rem;
   color: #767280;
+  margin-bottom: 40px;
 }
 
 .about-img {
@@ -236,5 +251,77 @@ a:hover {
   .about-img {
     width: 100%;
   }
+}
+
+#portfolio {
+  background: #fff;
+  padding-bottom: 80px;
+}
+
+#portfolio h1 {
+  font-size: 3.5rem;
+  color: #FF00AA;
+  margin: 0;
+  text-align: center;
+  padding: 60px 0;
+  text-shadow: 7px 7px 70px rgba(198, 16, 204, 0.54);
+}
+
+.portfolio-cards-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+  .portfolio-cards-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.portfolio-card {
+  width: 28%;
+  text-align: center;
+  padding: 40 30px;
+  border: 3px solid rgba(125, 4, 150, 0.925);
+  background: #fff;
+  -webkit-box-shadow: -1px 4px 69px -1px rgba(125, 4, 150, 0.925);
+          box-shadow: -1px 4px 69px -1px rgba(125, 4, 150, 0.925);
+}
+
+@media (max-width: 900px) {
+  .portfolio-card {
+    width: 80%;
+  }
+}
+
+.portfolio-card h2 {
+  font-size: 2rem;
+  color: #600AA1;
+}
+
+.portfolio-card p {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #767280;
+}
+
+.portfolio-card:hover {
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+
+footer {
+  height: 400px;
+  background-color: #fc7507;
 }
 /*# sourceMappingURL=main.css.map */
