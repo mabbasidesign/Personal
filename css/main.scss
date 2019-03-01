@@ -9,11 +9,28 @@ $colors: (
     accent: #eee7ab,
     Secondary: #ae00ff,
     Blackery: #000000,
+    purpule: #600AA1,
+    white: #fff,
+    gry: rgb(118, 114, 128),
 );
 
 @function colors($color-name){
     @return map-get($colors, $color-name) 
 };
+
+$mobile: 560px;
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+$tablet: 900px;
+@mixin tablet {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
 
 //---------- Header----------//
 
@@ -28,7 +45,20 @@ h1{
     margin-top: 0;
 }
 
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
 .header-img{
+    @include mobile{
+        clip-path: polygon(0 0, 75% 0, 39% 100%, 0% 100%);
+    }
+
+    @include tablet{
+        clip-path: polygon(72% 0, 100% 0, 100% 100%, 48% 100%);
+    }
+
     background: url("/img/b.jpg") no-repeat;
     clip-path: polygon(69% 0, 100% 0, 100% 100%, 49% 100%);
     box-shadow: 12px 11px 49px -2px rgba(77,5,77,1);
@@ -48,33 +78,63 @@ h1{
     height: 100vh;
     background-position: center;
     padding: 0 40px;
+
+    h1 {
+        font-size: 5.6rem;
+        padding-top: 80px;
+        color: colors(primary);
+        text-shadow: 7px 7px 19px rgba(198, 16, 204, 0.54);
+    }
+
+    h2 {
+        font-size: 4rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    h3 {
+        font-size: 3rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    h4 {
+        font-size: 2.5rem;
+        margin: 0;
+        padding-bottom: 40px;
+    }
+
+    @include tablet{
+        h1 {
+            font-size: 4.6rem;
+        }
+        h2 {
+            font-size: 2.4rem;
+        }
+        h3 {
+            font-size: 2.2rem;
+        }
+        h4 {
+            font-size: 2.4rem;
+        }
+    }
+
+    @include mobile{
+        h1 {
+            font-size: 4rem;
+        }
+        h2 {
+            font-size: 2.2rem;
+        }
+        h3 {
+            font-size: 2rem;
+        }
+        h4 {
+            font-size: 1.5rem;
+        }
+    }
 }
 
-#header h1 {
-    font-size: 6.5rem;
-    padding-top: 80px;
-    color: colors(primary);
-    text-shadow: 7px 7px 19px rgba(198, 16, 204, 0.54);
-
-}
-
-#header h2 {
-    font-size: 4rem;
-    margin: 0;
-    padding: 0;
-}
-
-#header h3 {
-    font-size: 3rem;
-    margin: 0;
-    padding: 0;
-}
-
-#header h4 {
-    font-size: 2.5rem;
-    margin: 0;
-    padding-bottom: 40px;
-}
 
 a{
     background-color: #fff;
@@ -91,4 +151,51 @@ a:hover{
     box-shadow: 12px 28px 105px -2px rgb(56, 3, 80);
     padding: 13px 25px;
     transition: all 0.3s ease 0s;
+}
+
+
+//---------- Services----------//
+
+#services{
+    background: colors(white);
+    
+    h1{
+        font-size: 3.5rem;
+        color: colors(backg);
+        margin: 0;
+        text-align: center;
+        padding: 60px 0;
+        text-shadow: 7px 7px 70px rgba(198, 16, 204, 0.54);
+    }
+}
+
+.services-cards-container{
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.services-card{
+
+    @include tablet{
+        width: 80%;
+    }
+
+    width: 28%;
+    text-align: center;
+    
+    h2{
+        font-size: 2rem;
+        color: colors(purpule)
+    }
+
+    p{
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        color: colors(gry)
+    }
 }

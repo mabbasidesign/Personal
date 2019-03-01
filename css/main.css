@@ -9,6 +9,11 @@ h1 {
   margin-top: 0;
 }
 
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .header-img {
   background: url("/img/b.jpg") no-repeat;
   -webkit-clip-path: polygon(69% 0, 100% 0, 100% 100%, 49% 100%);
@@ -24,6 +29,20 @@ h1 {
   padding: 0;
 }
 
+@media (max-width: 560px) {
+  .header-img {
+    -webkit-clip-path: polygon(0 0, 75% 0, 39% 100%, 0% 100%);
+            clip-path: polygon(0 0, 75% 0, 39% 100%, 0% 100%);
+  }
+}
+
+@media (max-width: 900px) {
+  .header-img {
+    -webkit-clip-path: polygon(72% 0, 100% 0, 100% 100%, 48% 100%);
+            clip-path: polygon(72% 0, 100% 0, 100% 100%, 48% 100%);
+  }
+}
+
 #header {
   color: #fff;
   background-image: url("../images/pexels-photo.jpg");
@@ -33,7 +52,7 @@ h1 {
 }
 
 #header h1 {
-  font-size: 6.5rem;
+  font-size: 5.6rem;
   padding-top: 80px;
   color: #130856;
   text-shadow: 7px 7px 19px rgba(198, 16, 204, 0.54);
@@ -57,6 +76,36 @@ h1 {
   padding-bottom: 40px;
 }
 
+@media (max-width: 900px) {
+  #header h1 {
+    font-size: 4.6rem;
+  }
+  #header h2 {
+    font-size: 2.4rem;
+  }
+  #header h3 {
+    font-size: 2.2rem;
+  }
+  #header h4 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 560px) {
+  #header h1 {
+    font-size: 4rem;
+  }
+  #header h2 {
+    font-size: 2.2rem;
+  }
+  #header h3 {
+    font-size: 2rem;
+  }
+  #header h4 {
+    font-size: 1.5rem;
+  }
+}
+
 a {
   background-color: #fff;
   padding: 12px 22px;
@@ -74,5 +123,61 @@ a:hover {
   padding: 13px 25px;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+
+#services {
+  background: #fff;
+}
+
+#services h1 {
+  font-size: 3.5rem;
+  color: #FF00AA;
+  margin: 0;
+  text-align: center;
+  padding: 60px 0;
+  text-shadow: 7px 7px 70px rgba(198, 16, 204, 0.54);
+}
+
+.services-cards-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+  .services-cards-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.services-card {
+  width: 28%;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .services-card {
+    width: 80%;
+  }
+}
+
+.services-card h2 {
+  font-size: 2rem;
+  color: #600AA1;
+}
+
+.services-card p {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #767280;
 }
 /*# sourceMappingURL=main.css.map */
